@@ -11,8 +11,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.post('/', (req, res) => {
-  console.log('ACTION NAME ', req.body.queryResult.action);
-  return action[req.body.queryResult.action](req, res);
+  console.log('ACTION NAME ', req.body.result.action);
+  return action[req.body.result.action](req, res);
 });
 
 app.listen(port, function () {
