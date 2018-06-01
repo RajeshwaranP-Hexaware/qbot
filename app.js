@@ -20,7 +20,7 @@ app.post('/', (req, res) => {
 
 app.post('/dialogflow', (req, res) => {
   let data = req.body.data;
-  service.callApi("https://api.api.ai/v1/query?v=20150910", "POST", JSON.stringify(data), "aa3c4bf166e14cdbaa1d46d3a3fbe4b4")
+  service.callApi("https://api.api.ai/v1/query?v=20150910", "POST", data, "aa3c4bf166e14cdbaa1d46d3a3fbe4b4")
     .then(body => {
       console.log('SUCCESS FROM DILAOGFLOW ', JSON.stringify(body));
       return res.json(body);
