@@ -1,3 +1,5 @@
+import { type } from 'os';
+
 'use strict';
 
 const request = require('request');
@@ -17,8 +19,9 @@ module.exports.callApi = (url, method, body, accessToken) => {
         options.headers.Authorization = "Bearer " + accessToken;
     }
     if (method == "POST" && body) {
-        options.body = body;
+        options.body = JSON.parse(JSON.stringify(body));
     }
+    console.log(type)
     console.log('POLPOL', options);
     return new Promise((resolve, reject) => {
         request(options, function (err, response, body) {
