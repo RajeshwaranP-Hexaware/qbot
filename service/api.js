@@ -2,7 +2,7 @@
 
 const request = require('request');
 
-module.exports.callApi = (url, method, body, cookie) => {
+module.exports.callApi = (url, method, body, accessToken) => {
 
     let options = {
         method: method,
@@ -13,8 +13,8 @@ module.exports.callApi = (url, method, body, cookie) => {
         },
         json: true
     };
-    if (cookie) {
-        options.headers.Cookie = cookie;
+    if (accessToken) {
+        options.headers.Authorization = "Bearer " + accessToken;
     }
     if (method == "POST" && body) {
         options.body = body;
