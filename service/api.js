@@ -19,7 +19,7 @@ module.exports.callApi = (url, method, body, accessToken) => {
     if (method == "POST" && body) {
         options.body = JSON.parse(JSON.stringify(body));
     }
-    console.log(type)
+    console.log(typeof options, typeof options.body);
     console.log('POLPOL', options);
     return new Promise((resolve, reject) => {
         request(options, function (err, response, body) {
