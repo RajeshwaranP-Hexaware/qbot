@@ -9,9 +9,9 @@ module.exports.callApi = (url, method, body, accessToken) => {
         url: url,
         headers: {
             'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        },
-        json: true
+            'Accept': 'application/json',
+            
+        }
     };
     if (accessToken) {
         options.headers.Authorization = "Bearer " + accessToken;
