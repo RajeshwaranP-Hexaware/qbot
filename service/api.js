@@ -1,5 +1,3 @@
-import { type } from 'os';
-
 'use strict';
 
 const request = require('request');
